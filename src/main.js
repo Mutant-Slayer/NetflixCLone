@@ -13,9 +13,9 @@ import './styles/app.css';
 //icons
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faChevronLeft, faChevronRight, faSearch } from '@fortawesome/free-solid-svg-icons'
+import { faChevronLeft, faChevronRight, faSearch, faPlay } from '@fortawesome/free-solid-svg-icons'
 
 
-library.add(faChevronLeft, faChevronRight, faSearch)
+library.add(faChevronLeft, faChevronRight, faSearch, faPlay)
 
 createApp(App).component('font-awesome-icon', FontAwesomeIcon).use(store).use(router).mount('#app')

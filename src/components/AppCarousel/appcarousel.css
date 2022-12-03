@@ -1,0 +1,60 @@
+/* purgecss start ignore */
+@import "@css/_app-partials.css";
+@import "~vue3-carousel/dist/carousel.css";
+
+.app-carousel {
+  .carousel {
+    &__pagination {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 8px;
+
+      &-button {
+        width: 6px;
+        height: 6px;
+        padding: 0;
+        border-radius: 100%;
+        background-color: $grey-2;
+
+        &--active {
+          background-color: $blue;
+        }
+
+        &:focus {
+          outline: none;
+        }
+      }
+    }
+
+    &__slide {
+      > * {
+        margin: 0 15px;
+      }
+
+      /* :after {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+      } */
+    }
+
+    &__next,
+    &__prev {
+      background-color: $blue;
+      width: 36px;
+      height: 36px;
+    }
+
+    &__next:focus,
+    &__prev:focus {
+      outline: none;
+    }
+  }
+}
+
+/* purgecss end ignore */

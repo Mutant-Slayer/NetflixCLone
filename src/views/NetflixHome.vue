@@ -10,7 +10,7 @@
                 :to="{ name: 'movieDetails', params: { id: ele.id } }"
               >
                 <img
-                  class="p-2 cursor-pointer h-48 poster w-80"
+                  class="p-2 cursor-pointer h-30 poster w-80"
                   v-bind:src="getSrc(ele)"
                 />
                 <div class="my-2 mx-2 cursor-pointer">{{ ele.title }}</div>
@@ -35,7 +35,7 @@
                 :to="{ name: 'showDetails', params: { id: ele.id } }"
               >
                 <img
-                  class="p-2 cursor-pointer h-48 poster w-80"
+                  class="p-2 cursor-pointer h-30 poster w-80"
                   v-bind:src="getSrc(ele)"
                 />
                 <div class="my-2 mx-2 cursor-pointer">{{ ele.name }}</div>
@@ -48,6 +48,7 @@
         </template>
       </carousel>
     </ul>
+
     <p class="cursor-pointer font-bold mx-2">Top Rated Shows</p>
     <ul class="flex">
       <carousel :items-to-show="4">
@@ -58,10 +59,34 @@
                 :to="{ name: 'showDetails', params: { id: ele.id } }"
               >
                 <img
-                  class="p-2 cursor-pointer h-48 poster w-80"
+                  class="p-2 cursor-pointer h-30 poster w-80"
                   v-bind:src="getSrc(ele)"
                 />
                 <div class="my-2 mx-2 cursor-pointer">{{ ele.name }}</div>
+              </router-link>
+            </li>
+          </div>
+        </slide>
+        <template #addons>
+          <navigation class="mx-4" />
+        </template>
+      </carousel>
+    </ul>
+
+    <p class="cursor-pointer font-bold mx-2">Top Rated Movies</p>
+    <ul class="flex">
+      <carousel :items-to-show="4">
+        <slide v-for="ele in $store.state.topRatedMovieList" :key="ele.id">
+          <div class="carousel__item">
+            <li class="w-30">
+              <router-link
+                :to="{ name: 'movieDetails', params: { id: ele.id } }"
+              >
+                <img
+                  class="p-2 cursor-pointer h-30 poster w-80"
+                  v-bind:src="getSrc(ele)"
+                />
+                <div class="my-2 mx-2 cursor-pointer">{{ ele.title }}</div>
               </router-link>
             </li>
           </div>
